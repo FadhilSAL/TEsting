@@ -1,0 +1,174 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+
+body{
+    font-family: sans-serif;
+    overflow-x: hidden;
+}
+
+/*navbar*/
+
+nav{
+    display: flex;
+    background-color: rgb(0, 177, 177);
+    overflow: hidden;
+    justify-content: space-around;
+    padding: 10px;
+    align-items: center;
+    color: rgb(255, 255, 255);
+    
+}
+
+
+nav ul{
+    display: flex;
+    justify-content: space-between;
+    width: 400px;
+    list-style: none;
+}
+
+@font-face {
+    font-family: 'alex';
+    src: url(alexbrush-regular-webfont.woff);
+}
+
+.logo{
+    font-family: 'alex';
+    font-size: 30px;
+    letter-spacing: 2px;
+}
+
+
+ul li a{
+    text-decoration: none;
+    color: inherit;
+}
+
+
+ul li a:hover{
+    text-decoration: underline;
+}
+
+
+/*responsive*/
+
+
+
+
+
+
+
+/*menu hamburger*/
+
+.menu-toggle{
+display: none;
+width: 28px;
+flex-direction: column;
+justify-content: space-between;
+height: 20px;
+position: relative;
+
+}
+
+.menu-toggle span{
+    display: block;
+    background-color: white;
+    width: 20px;
+    height: 3px;
+    border-radius: 3px;
+    
+}
+
+
+.menu-toggle input{
+    position: absolute;
+    width: 40px;
+    height: 28px;
+    opacity: 0;
+    left: -9px;
+    top: -5px;
+    cursor: pointer;
+    z-index: 2;
+
+}
+
+.menu-toggle span:nth-child(2){
+    transform-origin: 0 0;
+    transition: .5s;  
+}
+
+.menu-toggle span:last-child{
+    transform-origin: 0 100%;
+    transition: .5s;
+}
+
+.menu-toggle input:checked ~ span:nth-child(2){
+    
+    transform: rotate(45deg) translate(2px,-1px); 
+}
+
+.menu-toggle input:checked ~ span:last-child{
+    
+    transform: rotate(-45deg) translate(3px,0px);
+}
+
+.menu-toggle input:checked ~ span:nth-child(3){
+    
+    transform: scale(0);
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+@media screen and (max-width:576px){
+    
+    
+
+    nav ul{
+        position: absolute;
+        right: 0;
+        top: 0;
+        height: 100vh;
+        flex-direction: column;
+        background-color: inherit;
+        align-items: center;
+        justify-content: space-around;
+        z-index: -2;
+        width: 350px;
+        transform:translateX(100%) ;
+        transition: all 1s;
+        opacity: 0;
+        
+    }
+      .slide{
+        opacity: 1;
+        transform: translateX(0);
+      }
+
+    .menu-toggle{
+        display: flex;
+        
+    }
+}
